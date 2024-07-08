@@ -1,0 +1,9 @@
+CREATE PROCEDURE solution()
+BEGIN
+	/* Write your SQL here. Terminate each statement with a semicolon. */
+	SELECT YEAR(DATE) AS YEAR
+		, QUARTER(DATE) AS QUARTER
+		, SUM(PROFIT-LOSS) AS NET_PPROFIT
+	FROM ACCOUNTING
+	GROUP BY YEAR, QUARTER;
+END

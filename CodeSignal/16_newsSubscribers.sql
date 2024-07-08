@@ -1,0 +1,13 @@
+CREATE PROCEDURE solution()
+BEGIN
+	/* Write your SQL here. Terminate each statement with a semicolon. */
+	SELECT DISTINCT A.SUBSCRIBER
+	FROM (
+		SELECT *
+		FROM FULL_YEAR 
+		UNION ALL
+		SELECT *
+		FROM HALF_YEAR) A
+	WHERE NEWSPAPER LIKE '%DAILY%'
+	ORDER BY A.SUBSCRIBER;
+END

@@ -1,0 +1,10 @@
+CREATE PROCEDURE solution()
+BEGIN
+	/* Write your SQL here. Terminate each statement with a semicolon. */
+	SELECT DISTINCT DIRECTOR
+	FROM MOVIESINFO
+	WHERE YEAR >= 2000
+	GROUP BY DIRECTOR
+	HAVING SUM(OSCARS) > 2
+	ORDER BY DIRECTOR;
+END

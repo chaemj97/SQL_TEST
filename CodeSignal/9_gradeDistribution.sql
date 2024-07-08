@@ -1,0 +1,9 @@
+CREATE PROCEDURE solution()
+BEGIN
+	/* Write your SQL here. Terminate each statement with a semicolon. */
+	SELECT NAME, ID
+	FROM GRADES
+	WHERE FINAL > 0.25*MIDTERM1+0.25*MIDTERM2+0.5*FINAL
+		AND FINAL > 0.5*MIDTERM1+0.5*MIDTERM2
+	ORDER BY LEFT(NAME,3), ID;
+END
